@@ -31,8 +31,8 @@ export default function MarketingPage() {
             <SignedOut>
               <SignUpButton
                 mode="modal"
-                afterSignInUrl="/learn"
-                afterSignUpUrl="/learn"
+                afterSignInUrl="/estudar"
+                afterSignUpUrl="/estudar"
               >
                 <Button size="lg" variant="secondary" className="w-full">
                   Começe já
@@ -40,8 +40,8 @@ export default function MarketingPage() {
               </SignUpButton>
               <SignInButton
                 mode="modal"
-                afterSignInUrl="/learn"
-                afterSignUpUrl="/learn"
+                afterSignInUrl="/estudar"
+                afterSignUpUrl="/estudar"
               >
                 <Button size="lg" variant="primaryOutline" className="w-full">
                   Já tenho uma conta
@@ -51,7 +51,7 @@ export default function MarketingPage() {
 
             <SignedIn>
               <Button size="lg" asChild variant="secondary" className="w-full">
-                <Link href="/learn">Continue aprendendo</Link>
+                <Link href="/estudar">Continue aprendendo</Link>
               </Button>
             </SignedIn>
           </ClerkLoaded>
