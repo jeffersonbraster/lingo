@@ -2,8 +2,8 @@ type Props = {
   children: React.ReactNode;
 };
 
-import MobileHeader from "@/components/mobile-header";
-import Sidebar from "@/components/sidebar";
+import MobileHeader from "@/components/shared/mobile-header";
+import Sidebar from "@/components/shared/sidebar";
 import React from "react";
 
 const MainLayout = ({ children }: Props) => {
