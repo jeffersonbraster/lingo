@@ -1,6 +1,7 @@
 "use client";
 
 import { refillHearts } from "@/actions/user-progress";
+import { createStripeUrl } from "@/actions/user-subscription";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useTransition } from "react";
@@ -27,6 +28,20 @@ const Items = ({ hearts, points, hasActiveSubscription }: Props) => {
     });
   };
 
+  const onUpgrade = () => {
+    startTransiction(() => {
+      createStripeUrl()
+        .then((res) => {
+          if (res.data) {
+            window.location.href = res.data;
+          }
+        })
+        .catch(() =>
+          toast.error("Erro ao comprar vidas, tente novamente mais tarde.")
+        );
+    });
+  };
+
   return (
     <ul className="w-full">
       <div className="flex items-center w-full p-4 gap-x-4 border-t-2">
@@ -48,6 +63,23 @@ const Items = ({ hearts, points, hasActiveSubscription }: Props) => {
               <p>{POINTS_TO_REFIL}</p>
             </div>
           )}
+        </Button>
+      </div>
+
+      <div className="flex items-center w-full p-4 pt-8 gap-x-4 border-t-2">
+        <Image
+          src="/unlimited.svg"
+          alt="vidas ilimitado"
+          height={60}
+          width={60}
+        />
+        <div className="flex-1">
+          <p className="text-neutral-700 text-base lg:text-xl font-bold">
+            Vidas ilimitadas
+          </p>
+        </div>
+        <Button onClick={onUpgrade} disabled={pending}>
+          {hasActiveSubscription ? "configurações" : "comprar"}
         </Button>
       </div>
     </ul>
