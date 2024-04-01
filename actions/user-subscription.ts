@@ -36,7 +36,7 @@ export const createStripeUrl = async () => {
         price_data: {
           currency: 'brl',
           product_data: {
-            name: 'Lingo PRO',
+            name: 'G1-ENEM PRO',
             description: "Vidas ilimitadas"
           },
           unit_amount: 1000,

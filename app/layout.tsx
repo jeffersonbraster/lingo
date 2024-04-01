@@ -10,8 +10,8 @@ import PracticeModal from "@/components/shared/modals/practice-modal";
 const font = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Lingo - App",
-  description: "Um app para aprender linguas de forma divertida e eficiente",
+  title: "G1 - ENEM",
+  description: "Um app para aprender de forma divertida e eficiente",
 };
 
 export default function RootLayout({
